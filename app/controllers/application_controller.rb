@@ -40,6 +40,7 @@ class ApplicationController < Sinatra::Base
 
   post "/login" do
     @user= User.new(:username=>params[:username])
+    if @user && @user.authenticate(params[:password])
   end
 
   get "/failure" do
