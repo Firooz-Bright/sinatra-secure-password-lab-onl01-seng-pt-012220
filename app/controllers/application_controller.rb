@@ -39,7 +39,7 @@ class ApplicationController < Sinatra::Base
   end
 
   post "/login" do
-    ##your code here
+    @user= User.new(:username=>params[:username])
   end
 
   get "/failure" do
